@@ -1,0 +1,58 @@
+@start:	iinput @broj
+		jumpIfTrue @begin
+		jump @start
+		
+		
+		
+@begin:	load r0, @msg1
+		echo r0
+
+		load r0, @broj
+		echo r0					; pocetni ispisi
+
+		load r0, @msg2
+		echo r0
+		
+		load r0, @broj
+		push r0
+		call @fibo
+		echo r0
+		halt
+		
+@fibo:	push r1	
+		push r2	
+		move r1, 1	
+		move r2, 0	
+		move r0, [r15+4]	
+		testEquals r0, r1	
+		jumpIfTrue @end	
+		testEquals r0, r2	
+		jumpIfTrue @jedan	
+		decrement r0	
+		move r1, r0	
+		push r0	
+		call @fibo	
+		increment r15	
+		move r2, r0	
+		decrement r1	
+		push r1	
+		call @fibo	
+		increment r15	
+		add r0, r2, r0	
+		jump @end	
+@jedan:	move r0, 1	
+@end:	pop r2	
+		pop r1 
+		ret	
+		
+
+			
+
+@broj: DEFINT 0
+@msg1:		DEFSTR "Program za ispis fib. brojeva.\n"
+@msg2:		DEFSTR ". fib. broj je: "
+@space:		DEFSTR "\n"
+
+
+			RESERVE:60				
+@stackTop:	RESERVE

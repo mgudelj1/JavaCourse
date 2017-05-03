@@ -1,0 +1,24 @@
+		load r2, @bitzivota
+@start:	iinput @lokacija
+		jumpIfTrue @begin
+		jump @start
+		
+@begin:	move r0, 0
+		move r1, 5
+		load r7, @lokacija
+		echo r2
+		load r2, @newline
+		
+@loop:	testEquals r1, r0
+		jumpIfTrue @end
+		increment r7
+		decrement r1
+		echo r7
+		echo r2
+		jump @loop
+		
+@end:		halt
+			
+@bitzivota:	DEFSTR "Sljedećih 5 brojeva je:\n"
+@lokacija: DEFINT 0
+@newline: DEFSTR "\n"

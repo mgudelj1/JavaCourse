@@ -1,0 +1,60 @@
+Nakon Jave:
+oblikovni obrasci.
+
+
+void metoda poziv bez instance
+
+
+ugnjezdeni ne staticki ,,kada treba referenca na pozivajuci
+
+staticki kada
+
+anonimne
+
+
+Statièki ugniježðeni razredi su razredi definirani unutar drugih razreda i koji su oznaèeni
+kao static. Statièki ugniježðeni razredi imaju pristup samo do statièkih
+èlanskih varijabli vanjskog razreda te mogu direktno pozivati samo njegove statièke
+metode. Ovi razredi najèešæe se koriste kao pomoæne strukture podataka.
+
+Unutarnji razredi su ugniježðeni razredi koji nisu oznaèeni kao static. Ti razredi
+pripadaju primjerku vanjskog razreda, prilikom stvaranja automatski pamte referencu
+na primjerak vanjskog razreda i mogu pristupati svim statièkim i nestatièkim
+èlanskim varijablama i metodama vanjskog razreda.
+
+
+Sucelja mogu deklarirati:
+
+
+
+kod lista  samo equals
+
+kod mapa equals i hashCode
+1) Konstante (public static final)
+2) apstraktne metode (public abstract)
+3) defaultne metode (public)
+4) statièke metode (public static)
+-vidljive su u defaultnim metodama, te 
+pozivatejima izvana preko sintakse
+ImeSucelja.imeMetode;
+ne nasljeduju se
+
+
+
+inputStream outputStream
+
+InputStream
+
+resursi,,tipicne greske:
+alociranje 4 kb, poziva se read, obradi
+smece od 4,5 kb spremnik od 4kb zapisuje 4 sa 0.5kb....
+
+
+try {
+	is= new FileInpputStream(p.toFile());
+	byte[] budd = new byte[1024];
+
+trial with resources
+
+
+binarni podatci inputStream wrap u buffered
